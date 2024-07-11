@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "45c9816e-0cb9-4084-bf7a-88bae14b7c24",
+		"name": "Peticiones Api Persona",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35920445"
+	},
+	"item": [
+		{
+			"name": "Listar Personas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dni\" : 33316912,\r\n    \"nombre\" : \"Luciana\",\r\n    \"apellido\" : \"Escobar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/persona/listarPersonas",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persona",
+						"listarPersonas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"dni\": 58100875,\r\n        \"nombre\": \"Pol\",\r\n        \"apellido\": \"Acevedo\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/persona/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persona",
+						"crear"
+					]
+				},
+				"description": "No s necesario poner su ID ya que es automatico, por ende innecesario"
+			},
+			"response": []
+		},
+		{
+			"name": "Traer Persona (por ID)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/persona/traerPersona/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persona",
+						"traerPersona",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Persona",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_persona\": 1,\r\n    \"dni\": 33011073,\r\n    \"nombre\": \"Leonardo Germán\",\r\n    \"apellido\": \"Acevedo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editar/persona",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editar",
+						"persona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Persona (por ID)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/borrar/persona/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"borrar",
+						"persona",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

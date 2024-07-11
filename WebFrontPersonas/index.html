@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Personas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Personas</h1>
+        <button id="addPersonBtn">Agregar Persona</button>
+        <input type="text" id="searchInput" placeholder="Buscar por DNI o Apellido">
+        <table id="personTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DNI</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="personTableBody">
+                <!-- Las filas se insertarán dinámicamente aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Cuadro emergente para agregar/editar personas -->
+    <div id="personModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Agregar Persona</h2>
+            <form id="personForm">
+                <input type="hidden" id="personId">
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" required>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+                <button type="submit" id="savePersonBtn">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmación</h2>
+            <p id="confirmText">¿Está seguro que desea eliminar a esta persona?</p>
+            <div class="btn-container">
+                <button id="cancelBtn" class="cancel-btn">Cancelar</button>
+                <button id="confirmBtn" class="confirm-btn">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+
+</html>

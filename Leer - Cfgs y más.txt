@@ -1,0 +1,28 @@
+La carpeta "ApiRestBackPersonas" es el proyecto de la api rest para el backen el cual deberemos abrir con Netbeans.
+Dentero de NetBeans > File > Open Proyect > "Destino del proyecto"
+
+Dentro de Netbeans antes de hacer correr la aplicación debemos realizar algunas configuraciones:
+ 
+Iremos dentro de nuestro proyecto a la carpeta "Other Sources" ahí dentro a "src/main/resources",
+dentro de "default package" abrimos "aplication.properties" y ahí dentro modificamos el apartado de:
+
+spring.datasource.username="nuestro usuario del gestor de la base de datos"
+spring.datasource.password="nuestra contraseña del gestor de la base de datos"
+Guardamos.
+
+El paso siguiente será crear una base de datos llamada "personas", dentro de ella no crear ninguna tablade,
+recordar configurarla en utf8 y en español.
+
+Para poder ejecutar la aplicación desde el lado del front end debemos abrir en Visual Studio Code la carpeta "WebFrontPersonas"
+y tener instalada la extensión de "Live Server"
+
+Volvemos a Netbeans y hacemos correr la aplicación:
+paquete "com.aplicacion" > PersonaApplication.java > bóton derecho > Run File
+
+Volvemos a VS Code, damos clic derecho en el archivo "index.html", luego en "Open With Live Server" 
+Y si todo salió bien se abrira una pagina para agregar una persona, luego editarla o eliminarla también podremos 
+buscar por dni o por apellido.
+
+En caso de que esto no ocurra puede ser que no coincida el puerto de live server con el seteado en Netbeans, 
+lo que debemos hacer es al darle en open with Life server al archivo index.html debemos fijarnos en 
+la dirección web cuál es el puerto en donde se está abriendo/ejecutando y cuál es la ip por ejemplo "127.0.0.1:5500" , una vez que tenemos ese dato nos dirigimos a NetBeans y en el archivo "personaController" nos fijamos que en la anotation @CrossOrigin entre paréntesis esté la misma IP que nos muestra el live server al ejecutarse, esto debería solucionar el posible error.
